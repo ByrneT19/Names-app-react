@@ -9,15 +9,30 @@ class App extends Component {
     super(props)
     this.state = {
       filterText: '',
-      favourites: [1, 2, 14, 20]
+      favourites: []
     }
   }
 
+  //update search for input value
   filterUpdate = (value) => {
     this.setState({
       filterText: value
     })
   }
+
+  addFavourite(id) {
+    const favList = this.state.favourites.concat([id])
+    this.setState({
+      favourites: favList
+    })
+  }
+
+  // removeName(id) {
+  //   const delName = this.state.NamesList.handleDelete([id])
+  //   this.setState({
+  //     NamesList: delName
+  //   })
+  // }
 
   render() {
     return(
@@ -34,6 +49,8 @@ class App extends Component {
           <NamesList 
             data={this.props.data}
             filterText={this.state.filterText}
+            addFavourite={this.addFavourite.bind(this)}
+            // delName={this.delName.bind(this)}
           />
           <Credit />
         </main>
