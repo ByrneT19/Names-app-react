@@ -9,7 +9,8 @@ class App extends Component {
     super(props)
     this.state = {
       filterText: '',
-      favourites: []
+      favourites: [],
+      data: this.props.data
     }
   }
 
@@ -27,12 +28,12 @@ class App extends Component {
     })
   }
 
-  // removeName(id) {
-  //   const delName = this.state.NamesList.handleDelete([id])
-  //   this.setState({
-  //     NamesList: delName
-  //   })
-  // }
+  removeName(id) {
+    const delName = this.state.NamesList.handleDelete([id])
+    this.setState({
+      NamesList: delName
+    })
+  }
 
   render() {
     return(
@@ -44,13 +45,13 @@ class App extends Component {
         <main>
           <Shortlist 
             favourites={this.state.favourites}
-            data={this.props.data}
+            data={this.state.data}
             />
           <NamesList 
-            data={this.props.data}
+            data={this.state.data}
             filterText={this.state.filterText}
             addFavourite={this.addFavourite.bind(this)}
-            // delName={this.delName.bind(this)}
+            delName={this.removeName.bind(this)}
           />
           <Credit />
         </main>

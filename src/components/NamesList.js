@@ -13,7 +13,7 @@ export default ({data, filterText, addFavourite, delName}) => {
         <li 
           key={name.id} 
           className={name.sex}
-          onClick={() => addFavourite(name.id)/*, delName(name.id) */}
+          onClick={() => addFavourite(name.id), this.delName(name_to_delete)}
         >
           {name.name}
         </li>
