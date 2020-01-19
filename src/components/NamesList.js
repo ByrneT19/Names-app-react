@@ -13,7 +13,9 @@ export default ({data, filterText, addFavourite, delName}) => {
         <li 
           key={name.id} 
           className={name.sex}
-          onClick={() => addFavourite(name.id), this.delName(name_to_delete)}
+          onClick={() => addFavourite(name.id), this.delName(name === addFavourite(name.id))}   //name_to_delete
+//           Yes, it is similar but would apply to each "Name" entity. And if the data is coming from db, 
+//            you might need to change the schema to add that value as well. In reference to welocme in codevolution course
         >
           {name.name}
         </li>
