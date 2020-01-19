@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       filterText: '',
       favourites: [],
-      data: this.props.data
+      data: this.props.data,
+      shortlistedName: false
     }
   }
 
@@ -52,6 +53,7 @@ class App extends Component {
             filterText={this.state.filterText}
             addFavourite={this.addFavourite.bind(this)}
             delName={this.removeName.bind(this)}
+            shortlistedName={this.state}
           />
           <Credit />
         </main>
