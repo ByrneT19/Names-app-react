@@ -10,8 +10,8 @@ class App extends Component {
     this.state = {
       filterText: '',
       favourites: [],
-      data: this.props.data,
-      shortlistedName: false
+      data: this.props.data
+      // shortlistedName: false
     }
   }
 
@@ -29,12 +29,12 @@ class App extends Component {
     })
   }
 
-  removeName(id) {
-    const delName = this.state.NamesList.handleDelete([id])
-    this.setState({
-      NamesList: delName
-    })
-  }
+  // removeName(id) {
+  //   const delName = this.state.NamesList.handleDelete([id])
+  //   this.setState({
+  //     NamesList: delName
+  //   })
+  // }
 
   render() {
     return(
@@ -52,8 +52,8 @@ class App extends Component {
             data={this.state.data}
             filterText={this.state.filterText}
             addFavourite={this.addFavourite.bind(this)}
-            delName={this.removeName.bind(this)}
-            shortlistedName={this.state}
+            // removeName={this.removeName.bind(this)}
+            // shortlistedName={this.state}
           />
           <Credit />
         </main>
